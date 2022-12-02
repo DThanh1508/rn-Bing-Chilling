@@ -65,3 +65,16 @@ buck-out/
 
 # package-lock.json
 package-lock.json
+.bundle/
+__tests__/
+.buckconfig
+.eslintrc.js
+.flowconfig
+.node-version
+.prettierrc.js
+.ruby-version
+.watchmanconfig
+app.json
+babel.config.js
+Gemfile
+metro.config.js
