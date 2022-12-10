@@ -3,22 +3,19 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import IconFeather from 'react-native-vector-icons/Feather';
+import {COLORS} from '../utils/variables';
 
 const BottomTab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
-    <BottomTab.Navigator
-      sceneContainerStyle={{backgroundColor: 'white'}}
-      screenOptions={{
-        tabBarStyle: {position: 'absolute', bottom: 0, height: 60},
-      }}>
+    <BottomTab.Navigator screenOptions={styles.bottomTab}>
       <BottomTab.Screen
         name="HomeTab"
         component={Home}
         options={() => {
           return {
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: ({focused}) => (
               <IconFeather
                 style={focused ? styles.iconFocused : styles.iconUnfocused}
@@ -34,7 +31,7 @@ const BottomTabs = () => {
         component={Home}
         options={() => {
           return {
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: ({focused}) => (
               <IconFeather
                 style={focused ? styles.iconFocused : styles.iconUnfocused}
@@ -50,7 +47,7 @@ const BottomTabs = () => {
         component={Home}
         options={() => {
           return {
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: ({focused}) => (
               <IconFeather
                 style={focused ? styles.iconFocused : styles.iconUnfocused}
@@ -66,7 +63,7 @@ const BottomTabs = () => {
         component={Home}
         options={() => {
           return {
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: ({focused}) => (
               <IconFeather
                 style={focused ? styles.iconFocused : styles.iconUnfocused}
@@ -84,32 +81,12 @@ const BottomTabs = () => {
 export default BottomTabs;
 
 const styles = StyleSheet.create({
-  iconCenter: {
-    backgroundColor: '#4157FF',
-    padding: 10,
-    fontSize: 30,
-    borderRadius: 4,
-    color: '#FFFFFF',
-    position: 'absolute',
-    top: -20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.58,
-    shadowRadius: 6.0,
-    elevation: 6,
-  },
   iconFocused: {
-    color: '#4157FF',
+    color: COLORS.white,
     fontSize: 35,
-    backgroundColor: '#FFC618',
-    padding: 10,
-    borderRadius: 50,
   },
   iconUnfocused: {
-    color: '#090F4773',
+    color: COLORS.whiteLess,
     fontSize: 30,
   },
   newNotification: {
@@ -119,5 +96,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF0000',
     right: 5,
     borderRadius: 5,
+  },
+  bottomTab: {
+    tabBarStyle: {
+      position: 'absolute',
+      bottom: 0,
+      height: 60,
+      backgroundColor: '#61616191',
+    },
   },
 });
